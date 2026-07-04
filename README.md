@@ -402,7 +402,7 @@ docker compose up --build    # starts app + database together
 
 **Made with ❤️ by Matheesh Kumar**
 
-*Google Gemini &nbsp;×&nbsp; MongoDB Atlas &nbsp;×&nbsp; Next.js &nbsp;×&nbsp; Docker*
+* GROKAI &nbsp;×&nbsp; Google Gemini &nbsp;×&nbsp; MongoDB Atlas &nbsp;×&nbsp; Next.js &nbsp;×&nbsp; Docker*
 
 [![MIT License](https://img.shields.io/badge/License-MIT-A855F7?style=flat-square)](LICENSE)&nbsp;
 [![GitHub](https://img.shields.io/badge/GitHub-Matheeshkumar368-6C63FF?style=flat-square&logo=github)](https://github.com/Matheeshkumar368)
