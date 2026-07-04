@@ -1,246 +1,300 @@
 <div align="center">
 
-```
-███████╗███╗   ███╗██████╗ ██╗      ██████╗ ██╗   ██╗███████╗███████╗
-██╔════╝████╗ ████║██╔══██╗██║     ██╔═══██╗╚██╗ ██╔╝██╔════╝██╔════╝
-█████╗  ██╔████╔██║██████╔╝██║     ██║   ██║ ╚████╔╝ █████╗  █████╗  
-██╔══╝  ██║╚██╔╝██║██╔═══╝ ██║     ██║   ██║  ╚██╔╝  ██╔══╝  ██╔══╝  
-███████╗██║ ╚═╝ ██║██║     ███████╗╚██████╔╝   ██║   ███████╗███████╗
-╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝
-```
-
-### ✦ &nbsp; A I - P o w e r e d &nbsp; E m p l o y e e &nbsp; F e e d b a c k &nbsp; P l a t f o r m &nbsp; ✦
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C63FF,50:A855F7,100:EC4899&height=200&section=header&text=Employee%20Feedback%20Platform&fontSize=38&fontColor=ffffff&fontAlignY=38&desc=AI-Powered%20%7C%20Smart%20Analysis%20%7C%20Real%20Insights&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
 
 <br/>
 
-[![Next.js](https://img.shields.io/badge/Next.js%2015-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![MongoDB](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![Gemini AI](https://img.shields.io/badge/Google%20Gemini%201.5-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-F7DF1E?style=for-the-badge)](LICENSE)
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&pause=1000&color=A855F7&center=true&vCenter=true&width=600&lines=Where+Employee+Voice+Meets+AI+Intelligence;Every+Feedback+Analyzed+Automatically;Smarter+HR+Decisions+Start+Here" alt="Typing SVG" />
+
+<br/><br/>
+
+[![Next.js](https://img.shields.io/badge/Next.js%2015-0f0f0f?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)&nbsp;
+[![TypeScript](https://img.shields.io/badge/TypeScript-1e3a5f?style=for-the-badge&logo=typescript&logoColor=61DAFB)](https://www.typescriptlang.org)&nbsp;
+[![MongoDB](https://img.shields.io/badge/MongoDB-0f2d1e?style=for-the-badge&logo=mongodb&logoColor=47A248)](https://www.mongodb.com/atlas)&nbsp;
+[![Gemini AI](https://img.shields.io/badge/Gemini%201.5%20Flash-1a1a2e?style=for-the-badge&logo=google&logoColor=4285F4)](https://ai.google.dev)&nbsp;
+[![Docker](https://img.shields.io/badge/Docker-0d1b2a?style=for-the-badge&logo=docker&logoColor=2496ED)](https://www.docker.com)&nbsp;
+[![MIT License](https://img.shields.io/badge/License-MIT-2d1b4e?style=for-the-badge&logoColor=F7DF1E)](LICENSE)
 
 <br/>
 
-> **Employee Feedback Agent** is a smart HR web platform where employees share feedback  
-> and an AI agent reads, understands, and turns it into useful insights for managers — automatically.
-
-<br/>
-
-[🚀 &nbsp;Quick Start](#-quick-start) &nbsp;·&nbsp; [✨ &nbsp;Features](#-features) &nbsp;·&nbsp; [🤖 &nbsp;How the AI Works](#-how-the-ai-works) &nbsp;·&nbsp; [🐳 &nbsp;Deploy with Docker](#-deploy-with-docker)
-
-<br/>
+</div>
 
 ---
+
+<div align="center">
+
+## 💬 &nbsp; What Is This?
+
+</div>
+
+**Employee Feedback Platform** is a web application where employees share their thoughts about work — and an AI agent reads every single message, understands the feeling behind it, and shows HR managers a clear picture of what's happening inside the company.
+
+No more unread feedback. No more guessing. Just clear, AI-powered answers.
+
+<br/>
+
+<div align="center">
+
+```
+                    ╭──────────────────────────────────╮
+                    │                                  │
+                    │   👤  Employee writes feedback   │
+                    │            │                     │
+                    │            ▼                     │
+                    │   🤖  AI reads & understands     │
+                    │            │                     │
+                    │            ▼                     │
+                    │   📊  HR sees clear insights     │
+                    │                                  │
+                    ╰──────────────────────────────────╯
+```
 
 </div>
 
 <br/>
 
-## 🧭 &nbsp;What is this project?
+---
 
-**Employee Feedback Agent** is a full-stack web application built as a college capstone project. It solves a real-world problem — companies collect employee feedback but rarely have time to read and act on it.
+<div align="center">
 
-This platform fixes that by connecting a feedback form directly to an AI agent. The moment an employee submits feedback, the AI reads it, figures out the mood, urgency, and key topics, and shows the HR admin a clear summary — no manual reading required.
+## ✅ &nbsp; College Requirements — All Met
 
-**Two types of users:**
-- 👤 **Employee** — submits feedback, sees AI analysis of their own submissions
-- 🛡️ **HR Admin** — manages all feedback, views charts, chats with the AI agent, reads AI-generated reports
+</div>
+
+<br/>
+
+<div align="center">
+
+| # | Requirement | Solution Used |
+|:-:|---|---|
+| 1 | ✅ Unique individual project | AI-driven employee feedback — original topic |
+| 2 | ✅ Prompt Engineering | Role prompts · Few-shot examples · Temperature tuning |
+| 3 | ✅ LLM API | Google Gemini 1.5 Flash |
+| 4 | ✅ Database | MongoDB Atlas (cloud database) |
+| 5 | ✅ Web Framework | Next.js 15 (React) |
+| 6 | ✅ Frontend | TypeScript + Tailwind CSS + Framer Motion |
+| 7 | ✅ Deployment | Docker (multi-stage containerized build) |
+
+</div>
 
 <br/>
 
 ---
 
+<div align="center">
+
+## 👥 &nbsp; Two Types of Users
+
+</div>
+
 <br/>
 
-## ✅ &nbsp;Project Requirements Checklist
+<div align="center">
 
-| Requirement | How it's met |
+```
+ ┌──────────────────────────────┐       ┌──────────────────────────────┐
+ │                              │       │                              │
+ │   👤   E M P L O Y E E      │       │   🛡️   H R   A D M I N      │
+ │                              │       │                              │
+ │  • Submit feedback           │       │  • View all feedback         │
+ │  • Choose mood & category    │       │  • See AI analysis           │
+ │  • Stay anonymous if needed  │       │  • Chat with AI agent        │
+ │  • See AI reply on your post │       │  • Read auto-generated       │
+ │  • View your history         │       │    reports & charts          │
+ │                              │       │  • Manage employees          │
+ └──────────────────────────────┘       └──────────────────────────────┘
+```
+
+</div>
+
+<br/>
+
+---
+
+<div align="center">
+
+## ✨ &nbsp; Features at a Glance
+
+</div>
+
+<br/>
+
+> **🔐 Secure Login**  
+> Employees and admins have separate portals. Passwords are never stored as plain text. Sessions are protected with JWT tokens.
+
+> **📝 Feedback Form**  
+> Pick a star rating (1–5), choose a department and category, type your message, and hit submit. That's it — the AI takes over from there.
+
+> **🤖 Instant AI Analysis**  
+> Every feedback is automatically analyzed by Google Gemini. Within seconds you get: mood, urgency, emotion, keywords, and a recommendation for HR.
+
+> **💬 AI Chat for HR**  
+> Admins can ask the AI questions like *"Which team is struggling the most?"* and get real answers — because the AI reads live data from the database before replying.
+
+> **📊 Analytics Dashboard**  
+> 7 interactive charts showing trends, sentiment over time, department scores, category breakdowns, and more. Filter by date, department, or priority.
+
+> **📄 Auto-Generated Reports**  
+> One click generates a full written report summarizing the last 7, 30, or 90 days of feedback — written by the AI in plain English.
+
+<br/>
+
+---
+
+<div align="center">
+
+## 🤖 &nbsp; How the AI Agent Works
+
+</div>
+
+<br/>
+
+<div align="center">
+
+```
+  ════════════════════════════════════════════════════════════════
+   STEP 1  │  Employee submits feedback through the web form
+  ════════════════════════════════════════════════════════════════
+                              │
+                              ▼
+  ════════════════════════════════════════════════════════════════
+   STEP 2  │  Feedback saved to MongoDB Atlas (cloud database)
+  ════════════════════════════════════════════════════════════════
+                              │
+                              ▼
+  ════════════════════════════════════════════════════════════════
+   STEP 3  │  AI Agent (Gemini 1.5 Flash) reads the feedback
+           │
+           │   Prompt contains →  department + category
+           │                      star rating + message text
+           │                      3 example feedback samples
+  ════════════════════════════════════════════════════════════════
+                              │
+                              ▼
+  ════════════════════════════════════════════════════════════════
+   STEP 4  │  AI returns structured result
+           │
+           │   • Sentiment    →  positive / neutral / negative
+           │   • Priority     →  high / medium / low
+           │   • Urgency      →  immediate / normal / low
+           │   • Emotion      →  frustrated / happy / anxious...
+           │   • Keywords     →  ["workload","team","growth"]
+           │   • Suggestion   →  what HR should do about it
+  ════════════════════════════════════════════════════════════════
+                              │
+                              ▼
+  ════════════════════════════════════════════════════════════════
+   STEP 5  │  Admin sees enriched feedback + charts + AI chat
+  ════════════════════════════════════════════════════════════════
+```
+
+</div>
+
+<br/>
+
+---
+
+<div align="center">
+
+## 🧠 &nbsp; Prompt Engineering — 6 Techniques Used
+
+</div>
+
+<br/>
+
+<div align="center">
+
+| Technique | Simple Explanation |
 |---|---|
-| 🧑‍💻 Individual project with unique topic | AI-driven employee feedback analysis — unique use case |
-| 💬 Prompt Engineering | Layered prompts with role assignment, few-shot examples, and temperature tuning |
-| 🤖 LLM API Integration | Google Gemini 1.5 Flash via `@google/generative-ai` |
-| 🗄️ Database | MongoDB Atlas (cloud NoSQL) with Mongoose |
-| 🌐 Web Framework | Next.js 15 (React-based full-stack framework) |
-| 🎨 Frontend | TypeScript + Tailwind CSS + Radix UI + Framer Motion |
-| 🐳 Deployment | Docker (multi-stage build, docker-compose ready) |
+| 🎭 **Role Assignment** | We tell the AI: *"You are a Senior HR Consultant with 20 years of experience"* — this makes every answer more relevant and professional |
+| 📚 **Few-Shot Examples** | Before the real question, we show the AI 3 example feedbacks with correct answers — so it knows exactly what format to follow |
+| 🧱 **Structured Output** | We force the AI to always reply in JSON format — no random text, always clean and consistent |
+| 🌡️ **Temperature Control** | Low temperature (0.2) for analysis = precise results. High (0.7) for chat = natural conversation |
+| 💉 **Context Injection** | Before every chat reply, live stats from MongoDB are fed into the AI — so it answers based on real current data |
+| 🛡️ **Graceful Fallbacks** | If the AI is unavailable, the app uses smart defaults based on star rating — it never crashes |
+
+</div>
 
 <br/>
 
 ---
 
+<div align="center">
+
+## 🛠️ &nbsp; Tech Stack
+
+</div>
+
 <br/>
 
-## ✨ &nbsp;Features
-
-<br/>
+<div align="center">
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│   🔐  Secure Login     →   JWT auth, role-based access control      │
-│   📝  Feedback Form    →   Star rating, category, department        │
-│   🤖  AI Analysis      →   Sentiment, priority, keywords, emotion   │
-│   💬  AI Chat          →   Ask the AI anything about your data      │
-│   📊  Analytics        →   7 live charts, trends, department scores │
-│   📄  AI Reports       →   Auto-generated insights (7/30/90 days)   │
-│   🏢  Admin Panel      →   Manage employees, departments, feedback  │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+ ╔═══════════════╦══════════════════════════════════════════════╗
+ ║  Layer        ║  Technology                                  ║
+ ╠═══════════════╬══════════════════════════════════════════════╣
+ ║  Language     ║  TypeScript                                  ║
+ ║  Framework    ║  Next.js 15  (React full-stack)              ║
+ ║  Styling      ║  Tailwind CSS v4                             ║
+ ║  UI Parts     ║  Radix UI  +  Lucide Icons                   ║
+ ║  Animation    ║  Framer Motion                               ║
+ ║  Charts       ║  Recharts (7 chart types)                    ║
+ ║  Database     ║  MongoDB Atlas  +  Mongoose                  ║
+ ║  AI / LLM     ║  Google Gemini 1.5 Flash                     ║
+ ║  Auth         ║  JWT  +  bcryptjs (hashed passwords)         ║
+ ║  Deploy       ║  Docker  (multi-stage production build)      ║
+ ╚═══════════════╩══════════════════════════════════════════════╝
 ```
 
-<br/>
-
-### 🔐 &nbsp;Login & Security
-- Employees and admins have separate login pages
-- Passwords are hashed (never stored as plain text)
-- Sessions use secure JWT tokens
-- Pages are protected — wrong role gets redirected automatically
-
-### 📝 &nbsp;Feedback Submission
-- Simple form: pick a rating (1–5 stars), choose a category and department, write a message
-- Option to submit anonymously
-- After submitting, the AI starts analyzing immediately — a loading animation shows progress
-- Employees can see the full AI analysis of their past submissions
-
-### 🤖 &nbsp;AI Agent (Google Gemini 1.5 Flash)
-- Every feedback gets analyzed automatically — no admin action needed
-- AI detects: **mood** (positive / neutral / negative), **urgency** (high / medium / low), **emotion**, **keywords**, and gives **recommendations**
-- HR admins can **chat with the AI** — ask questions like *"Which department is most stressed this month?"* and get real answers based on live data
-- AI generates a full written report on demand
-
-### 📊 &nbsp;Analytics Dashboard
-- 10 summary cards (total feedback, average rating, positive %, pending count, etc.)
-- 7 interactive charts — trend lines, pie charts, bar charts, histograms
-- Filter by department, category, date range, sentiment, and priority
-- Export data as CSV or print the dashboard
+</div>
 
 <br/>
 
 ---
 
-<br/>
+<div align="center">
 
-## 🤖 &nbsp;How the AI Works
+## 🚀 &nbsp; Run It Locally
 
-<br/>
-
-The AI doesn't just read feedback — it thinks about it like an experienced HR consultant would.
-
-```
-  👤 Employee writes feedback
-           │
-           ▼
-  📥  Saved to MongoDB
-           │
-           ▼
-  🧠  AI Agent (Gemini) reads:
-       • Department & category
-       • Star rating
-       • The message text
-           │
-           ▼
-  📋  AI returns:
-       • Sentiment  →  positive / neutral / negative
-       • Priority   →  high / medium / low
-       • Urgency    →  immediate / normal / low
-       • Emotion    →  frustrated / happy / neutral ...
-       • Keywords   →  [ "workload", "management", "growth" ]
-       • Recommendation  →  what HR should do next
-           │
-           ▼
-  📊  Admin sees enriched feedback + charts + AI chat
-```
+</div>
 
 <br/>
 
-### 🧪 &nbsp;Prompt Engineering Techniques Used
-
-| Technique | What it does |
-|---|---|
-| **Role Assignment** | Tells the AI to act as a "Senior HR Consultant with 20+ years experience" — better, more relevant answers |
-| **Few-Shot Examples** | Shows the AI 3 sample feedbacks with correct answers before the real one — keeps output consistent |
-| **Structured Output** | Forces the AI to always return clean JSON — no messy free-text parsing needed |
-| **Temperature Control** | Low (0.2) for analysis = precise; High (0.7) for chat = natural conversation |
-| **Context Injection** | Before every chat reply, live stats from MongoDB are fed into the AI so answers are always up to date |
-| **Graceful Fallbacks** | If the AI is unavailable, the app doesn't crash — it uses smart defaults based on the star rating |
-
-<br/>
-
----
-
-<br/>
-
-## 🛠️ &nbsp;Tech Stack
-
-<br/>
-
-```
-╔══════════════════╦══════════════════════════════════════╗
-║  What            ║  Tool / Technology                   ║
-╠══════════════════╬══════════════════════════════════════╣
-║  Language        ║  TypeScript                          ║
-║  Framework       ║  Next.js 15 (React)                  ║
-║  Styling         ║  Tailwind CSS v4                     ║
-║  UI Components   ║  Radix UI + Lucide Icons             ║
-║  Animations      ║  Framer Motion                       ║
-║  Charts          ║  Recharts                            ║
-║  Database        ║  MongoDB Atlas (Mongoose ODM)        ║
-║  AI / LLM        ║  Google Gemini 1.5 Flash             ║
-║  Auth            ║  JWT + bcryptjs                      ║
-║  Deployment      ║  Docker (multi-stage build)          ║
-╚══════════════════╩══════════════════════════════════════╝
-```
-
-<br/>
-
----
-
-<br/>
-
-## 🚀 &nbsp;Quick Start
-
-You need **Node.js 20+** and **npm** installed.
+You need **Node.js 20+** installed. That's it.
 
 ```bash
-# 1. Clone the repo
+# Step 1 — Clone this project
 git clone https://github.com/Matheeshkumar368/Employee-Feedback-Agent.git
 cd Employee-Feedback-Agent
 
-# 2. Install packages
+# Step 2 — Install all packages
 npm install
 
-# 3. Copy environment file and fill in your values
+# Step 3 — Set up your environment keys
 cp .env.example .env.local
+# Open .env.local and fill in your values (see table below)
 
-# 4. Start the app
+# Step 4 — Start the app
 npm run dev
 ```
 
-Open **http://localhost:3000** in your browser.
+Then open **[http://localhost:3000](http://localhost:3000)**
 
 <br/>
 
-### 🔑 &nbsp;Environment Variables
+### 🔑 &nbsp; Keys You Need
 
-Open `.env.local` and fill in these values:
-
-| Variable | What to put |
-|---|---|
-| `MONGODB_URI` | Your MongoDB Atlas connection string |
-| `JWT_SECRET` | Any long random string (32+ characters) |
-| `GEMINI_API_KEY` | Your Google Gemini API key |
-| `NEXTAUTH_SECRET` | Another long random string |
-| `NEXTAUTH_URL` | `http://localhost:3000` for local dev |
-
-**Get a free Gemini API key:** [makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)  
-**Get a free MongoDB Atlas cluster:** [mongodb.com/atlas](https://www.mongodb.com/atlas)
+| Key | Where to Get It | What It Does |
+|---|---|---|
+| `MONGODB_URI` | [mongodb.com/atlas](https://www.mongodb.com/atlas) — free tier | Connects to your database |
+| `GEMINI_API_KEY` | [makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey) — free | Powers the AI analysis |
+| `JWT_SECRET` | Any random 32+ character string | Keeps logins secure |
+| `NEXTAUTH_SECRET` | Any random 32+ character string | Session security |
+| `NEXTAUTH_URL` | `http://localhost:3000` for local | App base URL |
 
 <br/>
 
-### 🌱 &nbsp;Seed Demo Data
-
-Once the app is running, load sample users and feedback:
+### 🌱 &nbsp; Load Sample Data
 
 ```bash
 curl -X POST http://localhost:3000/api/seed \
@@ -248,79 +302,93 @@ curl -X POST http://localhost:3000/api/seed \
   -d '{"secret": "aurahr-seed-2024"}'
 ```
 
-**Demo accounts created:**
-- Admin → `admin@aurahr.com` / `admin123`
-- Employee → `john.doe@aurahr.com` / `employee123`
+This creates ready-to-use demo accounts:
+
+```
+Admin    →  admin@aurahr.com      /  admin123
+Employee →  john.doe@aurahr.com   /  employee123
+```
 
 <br/>
 
 ---
 
+<div align="center">
+
+## 🐳 &nbsp; Deploy with Docker
+
+</div>
+
 <br/>
 
-## 🐳 &nbsp;Deploy with Docker
-
-No Node.js installation needed on the server — Docker handles everything.
-
 ```bash
-# Build the image
-docker build -t employee-feedback-agent .
+# Build the container
+docker build -t employee-feedback-platform .
 
-# Run it
+# Run it (replace the values in quotes with your real keys)
 docker run -p 3000:3000 \
-  -e MONGODB_URI="your_atlas_uri" \
-  -e JWT_SECRET="your_secret" \
+  -e MONGODB_URI="your_mongodb_atlas_uri" \
+  -e JWT_SECRET="your_secret_here" \
   -e GEMINI_API_KEY="your_gemini_key" \
-  -e NEXTAUTH_SECRET="your_secret" \
+  -e NEXTAUTH_SECRET="your_secret_here" \
   -e NEXTAUTH_URL="http://localhost:3000" \
-  employee-feedback-agent
+  employee-feedback-platform
 ```
 
-Or use Docker Compose (starts the app + a local MongoDB together):
+Or start everything with one command using Docker Compose:
 
 ```bash
-cp .env.example .env.local   # fill in your keys
-docker compose up --build
+cp .env.example .env.local   # fill in your keys first
+docker compose up --build    # starts app + database together
 ```
 
 <br/>
 
 ---
 
+<div align="center">
+
+## 📁 &nbsp; Folder Layout
+
+</div>
+
 <br/>
 
-## 📁 &nbsp;Project Structure
-
 ```
-📦 Employee-Feedback-Agent
- ┣ 📂 src/
- ┃  ┣ 📂 app/               ← All pages (Next.js App Router)
- ┃  ┃  ┣ 📂 admin/          ← Admin dashboard, analytics, AI chat
- ┃  ┃  ┣ 📂 employee/       ← Employee dashboard, submit feedback
- ┃  ┃  ┗ 📂 api/            ← Backend API routes
- ┃  ┣ 📂 components/        ← Reusable UI components
- ┃  ┣ 📂 lib/               ← AI (Gemini), database, auth helpers
- ┃  ┗ 📂 models/            ← MongoDB data schemas
- ┣ 📜 Dockerfile            ← Production Docker build
- ┣ 📜 docker-compose.yml    ← App + MongoDB together
- ┗ 📜 .env.example          ← Template for environment variables
+📦 Employee-Feedback-Platform
+ │
+ ├── 📂 src/
+ │    ├── 📂 app/
+ │    │    ├── 📂 admin/        ← Admin pages (dashboard, analytics, AI chat)
+ │    │    ├── 📂 employee/     ← Employee pages (submit feedback, history)
+ │    │    └── 📂 api/          ← All backend logic lives here
+ │    │
+ │    ├── 📂 components/        ← Buttons, cards, sidebar, charts
+ │    ├── 📂 lib/               ← AI setup, database connection, auth
+ │    └── 📂 models/            ← Database structure (User, Feedback, Chat)
+ │
+ ├── 🐳 Dockerfile              ← Builds a production-ready container
+ ├── 🐳 docker-compose.yml      ← Runs app + MongoDB together
+ └── 📄 .env.example            ← Template — copy and fill with your keys
 ```
 
 <br/>
 
 ---
 
-<br/>
+<div align="center">
 
-## 🔭 &nbsp;What's Next
+## 🔭 &nbsp; Coming Soon
 
-| Feature | Status |
+| Feature | When |
 |---|---|
-| Email alerts when urgent feedback arrives | 🔜 Planned |
-| PDF report export | 🔜 Planned |
-| Real-time notifications | 🔜 Planned |
-| Employee profile editing | 🔜 Planned |
-| Mobile-friendly improvements | 🔜 Planned |
+| 📧 Email alerts for urgent feedback | Next version |
+| 📑 PDF report download | Next version |
+| 🔔 Real-time notifications | Next version |
+| 📱 Better mobile layout | Next version |
+| 🌐 Multi-language support | Future |
+
+</div>
 
 <br/>
 
@@ -330,19 +398,13 @@ docker compose up --build
 
 <div align="center">
 
-```
-  ╔══════════════════════════════════════════╗
-  ║                                          ║
-  ║   Built with  ❤️  for college project    ║
-  ║   by  Matheesh Kumar                     ║
-  ║                                          ║
-  ║   Google Gemini  ×  MongoDB  ×  Docker   ║
-  ║                                          ║
-  ╚══════════════════════════════════════════╝
-```
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EC4899,50:A855F7,100:6C63FF&height=120&section=footer&animation=fadeIn" width="100%"/>
 
-[![MIT License](https://img.shields.io/badge/License-MIT-F7DF1E?style=for-the-badge)](LICENSE)
-[![Made with Next.js](https://img.shields.io/badge/Made%20with-Next.js-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
-[![Powered by Gemini](https://img.shields.io/badge/Powered%20by-Google%20Gemini-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev)
+**Made with ❤️ by Matheesh Kumar**
+
+*Google Gemini &nbsp;×&nbsp; MongoDB Atlas &nbsp;×&nbsp; Next.js &nbsp;×&nbsp; Docker*
+
+[![MIT License](https://img.shields.io/badge/License-MIT-A855F7?style=flat-square)](LICENSE)&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-Matheeshkumar368-6C63FF?style=flat-square&logo=github)](https://github.com/Matheeshkumar368)
 
 </div>
