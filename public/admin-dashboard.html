@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - AuraHR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white">
+  <!-- Navbar -->
+  <nav class="bg-black p-5 flex justify-between items-center border-b border-gray-800">
+    <div class="flex items-center gap-3">
+      <span class="text-3xl">🔥</span>
+      <h1 class="text-3xl font-bold">AuraHR</h1>
+    </div>
+    <div class="flex gap-8">
+      <a href="#" class="text-indigo-400 font-medium">Dashboard</a>
+      <a href="create-form.html" class="hover:text-white">Create Form</a>
+      <a href="ai-agent.html" class="hover:text-white">AI Agent</a>
+      <a href="messages.html" class="hover:text-white">Messages</a>
+    </div>
+    <button onclick="logout()" class="bg-red-600 px-6 py-2 rounded-xl">Logout</button>
+  </nav>
+
+  <div class="p-10 max-w-7xl mx-auto">
+    <h1 class="text-5xl font-bold mb-10">Admin Dashboard</h1>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-6 mb-12">
+      <div class="bg-gray-900 p-8 rounded-3xl">
+        <p class="text-gray-400">Total Feedback</p>
+        <p class="text-6xl font-bold mt-2">184</p>
+      </div>
+      <div class="bg-gray-900 p-8 rounded-3xl">
+        <p class="text-gray-400">Forms Created</p>
+        <p class="text-6xl font-bold mt-2 text-purple-400">12</p>
+      </div>
+      <div class="bg-gray-900 p-8 rounded-3xl">
+        <p class="text-gray-400">Avg Rating</p>
+        <p class="text-6xl font-bold mt-2 text-yellow-400">8.7</p>
+      </div>
+    </div>
+
+    <button onclick="window.location.href='create-form.html'" 
+      class="bg-gradient-to-r from-purple-600 to-indigo-600 px-10 py-4 rounded-2xl text-lg font-semibold mb-12">
+      + Create New Feedback Form
+    </button>
+
+    <h2 class="text-2xl mb-4">Recent Feedbacks</h2>
+    <div id="feedbackList" class="space-y-4"></div>
+  </div>
+
+  <script>
+    async function loadFeedbacks() {
+      const container = document.getElementById('feedbackList');
+      try {
+        const res = await fetch('http://localhost:5000/api/feedbacks');
+        const data = await res.json();
+
+        container.innerHTML = data.map(f => `
+          <div class="bg-gray-900 p-6 rounded-3xl flex justify-between items-center">
+            <div>
+              <span class="text-blue-400">${f.employeeId}</span>
+              <span class="ml-4 text-gray-500 text-sm">${new Date(f.date).toLocaleString()}</span>
+              <p class="mt-2">${f.feedback}</p>
+            </div>
+            <span class="px-5 py-1 bg-yellow-500/10 text-yellow-400 rounded-full text-sm">Pending</span>
+          </div>
+        `).join('');
+      } catch(e) {
+        container.innerHTML = `<p class="text-gray-400">No feedback yet or backend not running.</p>`;
+      }
+    }
+
+    function logout() {
+      window.location.href = "index.html";
+    }
+
+    window.onload = loadFeedbacks;
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Version control
+.git
+.gitignore
+.github
+
+# Local environment — NEVER copy secrets into the image
+.env
+.env.*
+!.env.example
+
+# Dev/build artifacts
+node_modules
+.next
+out
+build
+coverage
+
+# Documentation (not needed at runtime)
+README.md
+CLAUDE.md
+AGENTS.md
+*.md
+
+# Editor metadata
+.vscode
+.idea
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files themselves
+Dockerfile
+docker-compose*.yml
+.dockerignore

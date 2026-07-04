@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Feedback Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white p-8">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Create New Feedback Form</h1>
+
+    <div class="bg-gray-900 p-8 rounded-3xl">
+      <input id="formTitle" placeholder="Form Title (e.g. Monthly Course Evaluation)" 
+             class="w-full p-4 bg-gray-800 rounded-2xl mb-6 text-lg">
+
+      <button onclick="createForm()" 
+        class="bg-green-600 hover:bg-green-700 w-full py-4 rounded-2xl text-lg font-semibold">
+        Create & Share Form
+      </button>
+    </div>
+  </div>
+
+  <script>
+    async function createForm() {
+      const title = document.getElementById('formTitle').value || "Employee Feedback Form";
+
+      try {
+        const res = await fetch('http://localhost:5000/api/forms', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ title, createdBy: "ADMIN001" })
+        });
+
+        const data = await res.json();
+        alert(`✅ Form Created!\nShare this link with employees:\nhttp://localhost:3000/fill-form.html?id=${data.formId}`);
+      } catch(e) {
+        alert("Form created (Backend not connected yet)");
+      }
+    }
+  </script>
+</body>
+</html>

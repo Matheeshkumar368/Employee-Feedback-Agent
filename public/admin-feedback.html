@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Feedback - AuraHR Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-950 text-white">
+    <div class="flex h-screen">
+        <div class="w-72 bg-black p-6 border-r border-gray-800">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                    <i class="fa-solid fa-users text-lg"></i>
+                </div>
+                <h1 class="text-2xl font-bold">AuraHR</h1>
+            </div>
+            
+            <nav class="space-y-2">
+                <a href="admin-dashboard.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 rounded-2xl transition-colors">
+                    <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+                <a href="ai-agent.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 rounded-2xl transition-colors">
+                    <i class="fa-solid fa-robot"></i> AI Feedback Agent
+                </a>
+                <a href="admin-feedback.html" class="flex items-center gap-3 px-4 py-3 bg-indigo-600 rounded-2xl text-white">
+                    <i class="fa-solid fa-comments"></i> All Feedback
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 rounded-2xl transition-colors">
+                    <i class="fa-solid fa-chart-bar"></i> Analytics
+                </a>
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 rounded-2xl transition-colors mt-auto">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </nav>
+        </div>
+
+        <div class="flex-1 overflow-auto">
+            <header class="border-b border-gray-800 p-6 flex justify-between items-center">
+                <div>
+                    <h2 class="text-3xl font-semibold">All Feedback</h2>
+                    <p class="text-gray-400 text-sm">Review and manage employee feedback</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span id="userName" class="text-sm text-gray-400">Loading...</span>
+                    <button onclick="logout()" class="px-5 py-2 bg-red-600 hover:bg-red-700 rounded-xl text-sm transition">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
+            </header>
+
+            <div class="p-8">
+                <div class="mb-6 flex gap-4">
+                    <input type="text" id="searchInput" placeholder="Search feedback..." 
+                           class="flex-1 bg-gray-900 border border-gray-700 rounded-2xl px-5 py-3 text-white"
+                           onkeyup="searchFeedback()">
+                    <select id="statusFilter" onchange="filterFeedback()" class="bg-gray-900 border border-gray-700 rounded-2xl px-5 py-3 text-white">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="reviewed">Reviewed</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+
+                <div id="feedbackTable" class="bg-gray-900 rounded-3xl border border-gray-800 overflow-hidden">
+                    <p class="p-6 text-gray-400">Loading feedback...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!user.employeeId) window.location.href = 'admin-login.html';
+        
+        document.getElementById('userName').textContent = `Welcome, ${user.name || 'Admin'}`;
+
+        async function loadFeedback() {
+            try {
+                const response = await fetch('http://localhost:5000/api/feedback');
+                if (response.ok) {
+                    const data = await response.json();
+                    renderFeedback(data.feedbacks || []);
+                } else {
+                    document.getElementById('feedbackTable').innerHTML = '<p class="p-6 text-red-400">Failed to load feedback</p>';
+                }
+            } catch (error) {
+                document.getElementById('feedbackTable').innerHTML = '<p class="p-6 text-red-400">Connection error</p>';
+            }
+        }
+
+        function renderFeedback(feedbacks) {
+            const table = document.getElementById('feedbackTable');
+            if (feedbacks.length === 0) {
+                table.innerHTML = '<p class="p-6 text-gray-400">No feedback found</p>';
+                return;
+            }
+
+            table.innerHTML = `
+                <table class="w-full">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Employee</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Department</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Category</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Rating</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Status</th>
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${feedbacks.map(fb => `
+                            <tr class="border-t border-gray-800 hover:bg-gray-800/50 transition">
+                                <td class="px-6 py-4">${fb.employeeName}</td>
+                                <td class="px-6 py-4">${fb.department}</td>
+                                <td class="px-6 py-4">${fb.category}</td>
+                                <td class="px-6 py-4">
+                                    ${'⭐'.repeat(fb.rating)}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-3 py-1 rounded-full text-xs bg-${fb.status === 'resolved' ? 'green' : fb.status === 'reviewed' ? 'yellow' : 'gray'}-600/20">
+                                        ${fb.status}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-400">${new Date(fb.createdAt).toLocaleDateString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function searchFeedback() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            // Re-filter already loaded feedback
+        }
+
+        function filterFeedback() {
+            // Apply status filter
+        }
+
+        loadFeedback();
+        
+        function logout() {
+            localStorage.removeItem('auth-token');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

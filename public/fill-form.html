@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fill Feedback Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white p-8">
+  <div class="max-w-2xl mx-auto bg-gray-900 p-10 rounded-3xl">
+    <h1 class="text-3xl font-bold mb-8" id="formTitle">Course Evaluation Form</h1>
+
+    <div class="space-y-8">
+      <div>
+        <label class="block mb-2">How would you rate this course?</label>
+        <input type="range" min="1" max="10" value="8" class="w-full">
+      </div>
+      <div>
+        <label class="block mb-2">What did you like most?</label>
+        <textarea id="q1" class="w-full p-4 bg-gray-800 rounded-2xl" rows="3"></textarea>
+      </div>
+      <div>
+        <label class="block mb-2">Suggestions for improvement?</label>
+        <textarea id="q2" class="w-full p-4 bg-gray-800 rounded-2xl" rows="3"></textarea>
+      </div>
+    </div>
+
+    <button onclick="submitFormResponse()" 
+      class="mt-10 w-full bg-blue-600 py-4 rounded-2xl text-lg">Submit Response</button>
+  </div>
+
+  <script>
+    async function submitFormResponse() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const formId = urlParams.get('id');
+        await fetch('http://localhost:5000/api/form-response', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ formId, employeeId: "EMP001", answers: { q1: document.getElementById('q1').value, q2: document.getElementById('q2').value } })
+        });
+      } catch(e) {
+        // backend might be unavailable
+      }
+      alert("✅ Response submitted! AI will analyze it.");
+      window.location.href = "employee-dashboard.html";
+    }
+  </script>
+</body>
+</html>

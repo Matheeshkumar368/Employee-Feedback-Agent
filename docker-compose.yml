@@ -1,0 +1,36 @@
+# =============================================================================
+# AuraHR — Docker Compose (Production Ready)
+# =============================================================================
+# Usage:
+#   Production (MongoDB Atlas):
+#     docker compose up --build
+#
+#   Local Development (with local MongoDB):
+#     docker compose -f docker-compose.yml -f docker-compose.local.yml up --build
+# =============================================================================
+
+version: "3.9"
+
+services:
+  # ---------------------------------------------------------------------------
+  # AuraHR Next.js Application
+  # ---------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: aurahr_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      # MongoDB Atlas URI is required when running without local MongoDB
+      MONGODB_URI: ${MONGODB_URI:?MONGODB_URI is required}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET is required}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:?GEMINI_API_KEY is required}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-change_me_in_production}
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}

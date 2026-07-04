@@ -1,0 +1,15 @@
+# =============================================================================
+# AuraHR — Production Docker Override (MongoDB Atlas)
+# =============================================================================
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+# =============================================================================
+
+services:
+  mongo:
+    profiles: ["disabled"]
+
+  app:
+    depends_on: []
+    environment:
+      MONGODB_URI: ${MONGODB_URI}

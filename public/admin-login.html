@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Admin Login - AuraHR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full mx-auto px-6">
+        <div class="flex justify-center mb-8">
+            <a href="index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+
+        <div class="glass border border-white/10 rounded-3xl p-10 shadow-2xl">
+            <div class="flex justify-center mb-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-inner">
+                    <i class="fa-solid fa-shield-halved text-4xl text-white"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-4xl font-bold text-center mb-2">Admin Portal</h1>
+            <p class="text-center text-indigo-300 mb-8">Secure access to HR dashboard</p>
+
+            <form id="adminForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Admin Email</label>
+                    <div class="relative">
+                        <input type="email" id="adminEmail" 
+                               class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 transition-colors"
+                               placeholder="admin@company.com" required>
+                        <i class="fa-solid fa-envelope absolute right-5 top-5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="adminPassword" 
+                               class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 transition-colors"
+                               placeholder="••••••••" required>
+                        <i class="fa-solid fa-lock absolute right-5 top-5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="text-red-400 text-sm hidden"></div>
+
+                <button type="submit"
+                        class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-semibold py-4 rounded-2xl transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Access Dashboard
+                </button>
+            </form>
+        </div>
+
+        <p class="text-center mt-8 text-gray-500 text-sm">
+            Are you an employee? 
+            <a href="employee-login.html" class="text-purple-400 hover:text-purple-300">Employee Login</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('adminForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            const errorDiv = document.getElementById('errorMessage');
+            const button = e.target.querySelector('button[type="submit"]');
+            
+            errorDiv.classList.add('hidden');
+            button.disabled = true;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Logging in...';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/login/admin', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    localStorage.setItem('auth-token', 'demo-token');
+                    localStorage.setItem('user', JSON.stringify({ 
+                        employeeId: 'ADMIN001', 
+                        name: 'Alex Johnson',
+                        email: 'admin@aurahr.com',
+                        role: 'admin',
+                        department: 'Human Resources',
+                        position: 'HR Director'
+                    }));
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    errorDiv.textContent = data.message || 'Login failed';
+                    errorDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Connection error. Please try again.';
+                errorDiv.classList.remove('hidden');
+            }
+            
+            button.disabled = false;
+            button.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Access Dashboard';
+        });
+    </script>
+</body>
+</html>

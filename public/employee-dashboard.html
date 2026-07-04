@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Dashboard - AuraHR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-black border-b border-gray-800 p-5 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <span class="text-3xl">👤</span>
+      <h1 class="text-3xl font-bold">AuraHR</h1>
+    </div>
+    <div class="flex gap-8 text-lg">
+      <a href="#" class="text-purple-400 font-medium">Dashboard</a>
+      <a href="messages.html" class="hover:text-white">Messages</a>
+      <a href="#" class="hover:text-white">My Forms</a>
+    </div>
+    <button onclick="logout()" class="bg-red-600 px-6 py-2 rounded-xl">Logout</button>
+  </nav>
+
+  <div class="p-10 max-w-5xl mx-auto">
+    <h1 class="text-5xl font-bold mb-2">Welcome, Employee</h1>
+    <p class="text-gray-400 text-xl">Share your valuable feedback</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <!-- Feedback Box -->
+      <div class="bg-gray-900 rounded-3xl p-8">
+        <h2 class="text-2xl font-semibold mb-6">Submit General Feedback</h2>
+        <textarea id="generalFeedback" rows="5" 
+          class="w-full bg-gray-800 rounded-2xl p-5 text-white placeholder-gray-400 focus:outline-none"
+          placeholder="How was your experience this month? Any suggestions?"></textarea>
+        <button onclick="submitGeneralFeedback()" 
+          class="mt-6 w-full bg-gradient-to-r from-purple-600 to-pink-600 py-4 rounded-2xl text-lg font-semibold">
+          Submit Feedback
+        </button>
+      </div>
+
+      <!-- Quick Rating -->
+      <div class="bg-gray-900 rounded-3xl p-8">
+        <h2 class="text-2xl font-semibold mb-6">Quick Rating</h2>
+        <div class="space-y-6">
+          <div>
+            <label class="block mb-3">How satisfied are you with your work environment?</label>
+            <input type="range" min="1" max="10" value="8" class="w-full accent-purple-500">
+          </div>
+          <button onclick="submitRating()" 
+            class="w-full bg-green-600 py-4 rounded-2xl text-lg font-semibold">
+            Submit Rating
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-semibold mb-6">Recent Activity</h2>
+      <div id="activityList" class="bg-gray-900 rounded-3xl p-6 text-gray-400">
+        No recent activity yet.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function submitGeneralFeedback() {
+      const text = document.getElementById('generalFeedback').value.trim();
+      if (!text) return alert("Please write your feedback");
+
+      try {
+        const res = await fetch('http://localhost:5000/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ employeeId: "EMP001", feedback: text })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert("✅ Feedback submitted successfully!");
+          document.getElementById('generalFeedback').value = "";
+        }
+      } catch (err) {
+        alert("Backend not running");
+      }
+    }
+
+    function submitRating() {
+      alert("✅ Rating submitted! Thank you.");
+    }
+
+    function logout() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
