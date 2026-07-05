@@ -400,7 +400,7 @@ docker compose up --build    # starts app + database together
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:EC4899,50:A855F7,100:6C63FF&height=120&section=footer&animation=fadeIn" width="100%"/>
 
-**Made with ❤️ by Matheesh Kumar**
+**Made  by Matheesh Kumar**
 
 * GROKAI &nbsp;×&nbsp; Google Gemini &nbsp;×&nbsp; MongoDB Atlas &nbsp;×&nbsp; Next.js &nbsp;×&nbsp; Docker*
 
